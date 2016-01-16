@@ -1,0 +1,10 @@
+%p#notice= notice
+%ul
+  -Image.all.each do |image|
+    %li
+      Mail :
+      =image_tag @image.url
+
+= link_to 'Edit', edit_image_path(@image)
+\|
+= link_to 'Back', images_path

@@ -1,1 +1,6 @@
 Page des utilisateurs
+%ul
+  -User.all.each do |user|
+    %li
+      Mail :
+      = link_to user.email, [user]

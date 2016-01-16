@@ -1,0 +1,9 @@
+= form_for @image, :html => {:multipart => true} do |f|
+  %p
+    = f.label :url
+    %br/
+  %p
+    = f.file_field :url
+  %p
+
+  %p= f.submit
