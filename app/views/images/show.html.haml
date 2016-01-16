@@ -1,10 +1,33 @@
 %p#notice= notice
 %ul
   -Image.all.each do |image|
-    %li
-      Mail :
-      =image_tag @image.url
+    %div.row
+      %div.col-xs-4
+        Image :
+      %div.col-xs-8
+        =image_tag @image.url, :class => "img-responsive"
+
+      %div.col-xs-4
+        Description :
+      %div.col-xs-8
+        =link_to @image.description
 
 = link_to 'Edit', edit_image_path(@image)
 \|
 = link_to 'Back', images_path
+
+
+%div.row.liste_posts
+  -Image.all.each do |image|
+    %div.col-xs-4
+      %div.col-xs-12
+        %h2
+          Titre :
+          = image.titre
+      %div.col-xs-12
+        =image_tag image.url, :class => "img-responsive"
+
+      %div.col-xs-12
+        Description :
+      %div.col-xs-12
+        =link_to image.description

@@ -1,17 +1,31 @@
-coucou
-//= link_to 'Ajouter un User', [:new, :user]
+%p#notice= notice
+%h1
+  Bienvenue sur le blog de Juliette Rivière !
+%div.row.liste_posts
+  -Image.all.each do |image|
 
 
-.btn-info
-  coucou
--Image.all.each do |image|
-  .col-xs-3.block-nom
-    =image_tag "http://lorempixel.com/image_output/cats-q-c-640-480-7.jpg", :class => "img-circle img-responsive"
-    Url
-    = link_to image.url, [image]
-    %br
-    = link_to "<button>Delete</button>".html_safe, image_path(image.id), method: "Delete", :confirm=>'Are you sure?'
-    = link_to "<button>Edit</button>".html_safe, edit_image_path(image.id)
-
-    %br
-    %br
+    / Template de card
+    .col-xs-4
+      .card
+        .card_titre
+          / <div class="card_action">
+          .card_author
+            .media
+              %a.pull-left{:href => "#"}
+                %img.media-object.dp.img-circle{:alt => "Image Utilisateur", :src => "http://lorempixel.com/400/400/nature"}
+            .card_author_content
+              %span.card_title
+                %a{:href => images_path(image.id), :title => image.titre}
+                = image.titre
+              %span.card_sub_title Du 15 au 17 Juillet 2016
+        / </div>
+        .card_image
+          %a{:href => "une_conf_web2day.php", :title => "Conférence Web2Day"}
+            %img.img-responsive{:alt => image.titre, :src => image.url }
+        .card_content
+          %a{:href => "une_conf_web2day.php", :title => "Conférence Web2Day"}
+            %p.sous_titre
+              Par Juliette Rivière / 15,16,17 juin 2016 / Inovation / 3 Com.
+            %p
+              = image.description

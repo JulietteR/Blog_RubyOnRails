@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
-  def index
 
+  def Index
+    @images = Image.all
   end
-
 
 end
