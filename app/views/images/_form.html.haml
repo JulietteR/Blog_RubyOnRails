@@ -4,8 +4,8 @@
       .col-xs-12.col-sm-8.col-md-6.col-sm-offset-2.col-md-offset-3
         %form{:role => "form"}
           %h2
-            Please Sign Up
-            %small It's free and always will be.
+            Formulaire d'ajout de post
+            %small
           %hr.colorgraph
             .row
               .col-xs-6.col-sm-6.col-md-6
@@ -13,31 +13,11 @@
                   %input#titre.form-control.input-lg{:name => "image[titre]", :placeholder => "Titre", :tabindex => "1", :type => "text"}
               .col-xs-6.col-sm-6.col-md-6
                 .form-group
-                  %input#url.input-lg{:name => "image[url]", :placeholder => "Last Name", :tabindex => "2", :type => "file"}
+                  %input#url.input-lg{:name => "image[url]", :placeholder => "Last Name", :style => "padding: 0px;", :tabindex => "2", :type => "file"}
             .form-group
               %textarea#description.form-control.input-lg{:name => "image[description]", :placeholder => "Entrez le texte",  :tabindex => "3", :type => "text"}
 
             %hr.colorgraph
               .row
-                .col-xs-6.col-md-6
-                  %input.btn.btn-primary.btn-block.btn-lg{:tabindex => "7", :type => "submit", :value => "Register"}/
-                .col-xs-6.col-md-6
-                  %a.btn.btn-success.btn-block.btn-lg{:href => "#"} Sign In
-    %p= f.submit
-
-
-= form_for @image, :html => {:multipart => true} do |f|
-  %p
-    = f.label :Description
-    = f.text_area :description
-    %br/
-    = f.label :Titre
-    = f.text_area :titre
-    %br/
-  %p
-    %p
-    = f.label :Image
-    = f.file_field :url
-  %p
-
-  %p= f.submit
+                .col-xs-12.col-md-12
+                  %input.btn.btn-primary.btn-block.btn-lg{:name => "commit", :type => "submit", :value => "Ajouter le post"}/
