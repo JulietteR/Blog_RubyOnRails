@@ -1,4 +1,3 @@
-%p#notice= notice
 %h1
   Bienvenue sur le blog de Juliette Rivière !
 %div.row.liste_posts
@@ -18,14 +17,17 @@
               %span.card_title
                 %a{:href => images_path(image.id), :title => image.titre}
                 = image.titre
-              %span.card_sub_title Du 15 au 17 Juillet 2016
+              %span.card_sub_title Par Juliette Rivière
         / </div>
         .card_image
-          %a{:href => "une_conf_web2day.php", :title => "Conférence Web2Day"}
+          %a{:href => image_path(image.id), :title => "Conférence Web2Day"}
             %img.img-responsive{:alt => image.titre, :src => image.url }
         .card_content
-          %a{:href => "une_conf_web2day.php", :title => "Conférence Web2Day"}
+          %a{:href => images_path(image.id), :title => "Conférence Web2Day"}
             %p.sous_titre
-              Par Juliette Rivière / 15,16,17 juin 2016 / Inovation / 3 Com.
+              = image.titre
+              |
+              = image.created_at.to_formatted_s(:long_ordinal)
             %p
-              = image.description
+              = truncate( image.description, length:200)
+

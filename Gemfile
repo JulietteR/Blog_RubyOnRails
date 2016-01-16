@@ -25,7 +25,6 @@ gem 'devise'
 # Images
 gem 'carrierwave'
 
-
 # Images
 gem 'bootstrap-sass', '~> 3.3.6'
 
