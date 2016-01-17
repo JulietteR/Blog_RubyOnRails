@@ -24,7 +24,7 @@
             %img.img-responsive{:alt => image.titre, :src => image.url,:style => "width:150px; height:auto;" }
           %td{:style => "width:25%;"}
             %div.btn.btn-primary
-              = link_to 'Show', image
+              = link_to 'Show', image_path(image)
             %div.btn.btn-warning
               = link_to 'Edit', edit_image_path(image)
             %div.btn.btn-danger
