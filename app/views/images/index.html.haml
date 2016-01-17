@@ -25,10 +25,11 @@
           %td{:style => "width:25%;"}
             %div.btn.btn-primary
               = link_to 'Show', image_path(image)
-            %div.btn.btn-warning
-              = link_to 'Edit', edit_image_path(image)
-            %div.btn.btn-danger
-              = link_to 'Destroy', image, :method => :delete, :data => { :confirm => 'Are you sure?' }
+            - if image.user == @user
+              %div.btn.btn-warning
+                = link_to 'Edit', edit_image_path(image)
+              %div.btn.btn-danger
+                = link_to 'Destroy', image, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
   %br
 

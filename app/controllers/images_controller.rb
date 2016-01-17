@@ -1,11 +1,13 @@
 class ImagesController < ApplicationController
   before_action :set_image, only: [:show, :edit, :update, :destroy ]
+  before_action :authenticate_user!
 
   # GET /images
   # GET /images.json
   def index
     @images = Image.all
     @images = Image.order('created_at DESC')
+    @user = current_user.id
   end
 
   def home
@@ -89,4 +91,6 @@ class ImagesController < ApplicationController
       params.require(:image).permit(:url, :description, :titre, :id)
 
     end
+
+
 end
