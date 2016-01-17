@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-  before_action :set_image, only: [:show, :edit, :update, :destroy]
+  before_action :set_image, only: [:show, :edit, :update, :destroy ]
 
   # GET /images
   # GET /images.json
@@ -8,6 +8,21 @@ class ImagesController < ApplicationController
     @images = Image.order('created_at DESC')
   end
 
+  def home
+    @images = Image.all
+      # @images = Image.order(created_at: :desc).paginate(:page => params[:page], :per_page => Image.count)
+   #@images = @images.paginate(:page => 1, :per_page => 6)
+
+    @images = Image.paginate(:page => params[:page])
+
+    ## perform a paginated query:
+   # @images = Image.paginate(:page => params[:page])
+
+    # or, use an explicit "per page" limit:
+    #Image.paginate(:page => params[:page], :per_page => 3)
+
+
+  end
   # GET /images/1
   # GET /images/1.json
   def show
@@ -62,6 +77,7 @@ class ImagesController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_image
@@ -70,7 +86,7 @@ class ImagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def image_params
-      params.require(:image).permit(:url, :description, :titre)
+      params.require(:image).permit(:url, :description, :titre, :id)
 
     end
 end

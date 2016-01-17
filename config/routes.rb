@@ -5,13 +5,12 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :posts
   resources :users
-  resources :images
-
-  namespace :home do
-    resources :images
+  resources :images do
+    get :home, on: :collection
   end
 
-end
+
+  get 'images', to: 'home'
 
 #Rails.application.routes.draw do
   #devise_for :usersru
@@ -69,4 +68,4 @@ end
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-#end
+end

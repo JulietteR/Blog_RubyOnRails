@@ -1,7 +1,8 @@
 %h1
   Bienvenue sur le blog de Juliette Rivière !
 %div.row.liste_posts
-  -Image.all.each do |image|
+
+  -@images.all.each do |image|
 
 
     / Template de card
@@ -30,4 +31,6 @@
               = image.created_at.to_formatted_s(:long_ordinal)
             %p
               = truncate( image.description, length:200)
+%div.row.liste_posts
+  = will_paginate @images
 
