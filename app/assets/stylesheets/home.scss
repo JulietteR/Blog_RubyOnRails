@@ -13,6 +13,16 @@ a:hover {
   background-color: transparent !important;
 
 }
+
+.center img {
+  margin: 0 auto;
+  text-align: center;
+  padding : 10px;
+}
+.text-left {
+  text-align: left;
+  padding: 20px;
+}
 .card {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   margin-top: 10px;
