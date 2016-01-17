@@ -31,6 +31,7 @@
            <li><%= link_to "Se déconnecter",  destroy_user_session_path, :method => :delete %>
           <% else %>
               <li><%= link_to "Se connecter", user_session_path %>
+              <li><%= link_to "S'inscrire", new_user_registration_path %>
           <% end %>
 
 
