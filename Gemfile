@@ -28,6 +28,7 @@ gem 'carrierwave'
 # Images
 gem 'bootstrap-sass', '~> 3.3.6'
 
+# Pagination HomePAge
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
