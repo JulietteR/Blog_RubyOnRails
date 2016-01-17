@@ -9,7 +9,6 @@ Rails.application.routes.draw do
     get :home, on: :collection
   end
 
-
   get 'images', to: 'home'
 
 #Rails.application.routes.draw do

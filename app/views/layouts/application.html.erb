@@ -18,7 +18,7 @@
           <span class="icon-bar"></span>
         </button>
         <div class="navbar-brand"><%= link_to "Blog de Juliette Rivière", root_path %></div>
-        <a class="navbar-brand-scroll" style="display:none" href="#">Blog de Juliette Rivière</a>
+         <a class="navbar-brand-scroll" style="display:none" href="#">Blog de Juliette Rivière</a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right ">
@@ -27,9 +27,14 @@
           </li>
           <li><%= link_to "Tous les posts", images_path %></li>
           <li><%= link_to "Ajouter une image", new_image_path %></li>
+          <% if user_signed_in? %>
+           <li><%= link_to "Se déconnecter",  destroy_user_session_path, :method => :delete %>
+          <% else %>
+              <li><%= link_to "Se connecter", user_session_path %>
+          <% end %>
 
-          <li><%= link_to "Se connecter", user_session_path %>
-          </li>
+
+              </li>
         </ul>
       </div>
     </div>
